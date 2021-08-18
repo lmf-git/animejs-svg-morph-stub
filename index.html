@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimeJS Morph SVG Stub</title>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!-- If this helped you follow us! -->
+    <!-- https://www.dreamsbyte.com/ -->
+</head>
+<body>
+
+    <svg id="container" width="769" viewBox="0 0 769 511" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g filter="url(#filter0_d)">
+            <path id="cloud" d="M592.847 177.939C581.932 176.403 571.169 176.522 560.788 178.056C550.637 121.928 505.605 76.1004 446.048 67.7206C377.314 58.0496 313.401 101.653 295.938 167.078C288.442 163.575 280.309 161.106 271.693 159.894C225.044 153.331 181.908 185.835 175.343 232.492C168.779 279.148 201.271 322.292 247.92 328.855C258.258 330.31 268.422 329.837 278.056 327.726C290.696 357.99 318.498 381.005 353.325 385.905C375.687 389.051 397.321 384.203 415.379 373.566C429.8 388.772 449.256 399.403 471.622 402.55C493.085 405.569 513.889 401.236 531.492 391.48C540.853 395.652 550.93 398.631 561.584 400.13C622.927 408.761 679.658 366.02 688.291 304.664C696.924 243.308 654.189 186.57 592.847 177.939Z" fill="url(#paint0_radial)" />
+        </g>
+        <defs>
+            <filter id="filter0_d" x="0.939453" y="0.0566406" width="768.032" height="510" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset dx="-52" dy="23"/>
+                <feGaussianBlur stdDeviation="58.5"/>
+                <feComposite in2="hardAlpha" operator="out"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0.723804 0 0 0 0 0.723804 0 0 0 0 0.723804 0 0 0 0.25 0"/>
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+            </filter>
+            <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(519.303 249.936) rotate(-139.754) scale(655.48 1033.99)">
+                <stop stop-color="white"/>
+                <stop offset="1" stop-color="#D0D0D0"/>
+            </radialGradient>
+        </defs>
+    </svg>
+        
+    <script>
+        document.querySelector('#container').addEventListener('mouseenter', ev => {            
+            console.log('mouseover')
+            anime({
+                targets: '#cloud',
+                d: [
+                    // { value: 'M592.847 177.939C581.932 176.403 571.169 176.522 560.788 178.056C550.637 121.928 505.605 76.1004 446.048 67.7206C377.314 58.0496 313.401 101.653 295.938 167.078C288.442 163.575 280.309 161.106 271.693 159.894C225.044 153.331 181.908 185.835 175.343 232.492C168.779 279.148 201.271 322.292 247.92 328.855C258.258 330.31 268.422 329.837 278.056 327.726C290.696 357.99 318.498 381.005 353.325 385.905C375.687 389.051 397.321 384.203 415.379 373.566C429.8 388.772 449.256 399.403 471.622 402.55C493.085 405.569 513.889 401.236 531.492 391.48C540.853 395.652 550.93 398.631 561.584 400.13C622.927 408.761 679.658 366.02 688.291 304.664C696.924 243.308 654.189 186.57 592.847 177.939Z' },
+                    { value: 'M234.198 364.421C228.821 360.512 221.85 355.2 216.963 350.581C182.66 318.166 167.992 275.205 170.145 231.766C172.134 191.634 188.48 151.094 216.963 118.082C221.557 112.756 228.145 106.517 233.437 101.731C239.019 96.6832 246.322 94.0566 253.849 94.0566H342.116H541.954H628.881C637.212 94.0566 645.245 97.2771 650.989 103.312C655.333 107.874 660.354 113.39 663.963 118.082C691.119 153.389 704.277 192.52 703.966 231.766C703.658 270.614 690.152 309.574 663.963 345.045C660.384 349.892 655.392 355.604 651.06 360.345C645.288 366.66 637.058 370.057 628.502 370.057H541.954H342.116H251.986C245.606 370.057 239.359 368.172 234.198 364.421Z' },
+                ],
+                easing: 'easeOutQuad',
+                duration: 2000,
+                delay: function(el, i) { return i * 250 },
+                // loop: true,
+                // direction: 'alternate'
+            });
+        })
+    </script>
+</body>
+</html>
